@@ -3,10 +3,14 @@
   const searchInput = document.getElementById("search");
   const filterBar = document.getElementById("category-filters");
   const emptyState = document.getElementById("empty-state");
+  const resultsCount = document.getElementById("results-count");
+  const sortSelect = document.getElementById("sort");
+  const resetBtn = document.getElementById("reset-filters");
 
   const categoryOrder = Object.keys(CATEGORY_LABELS);
   let activeCategory = "all";
   let query = "";
+  let sortMode = "default";
 
   function fmtPrice(n) {
     return n.toLocaleString("ro-RO") + " lei";
@@ -19,14 +23,24 @@
     return haystack.includes(query);
   }
 
+  function sortItems(items) {
+    const sorted = items.slice();
+    if (sortMode === "price-asc") sorted.sort((a, b) => a.price - b.price);
+    else if (sortMode === "price-desc") sorted.sort((a, b) => b.price - a.price);
+    else if (sortMode === "name-asc") sorted.sort((a, b) => a.name.localeCompare(b.name, "ro"));
+    return sorted;
+  }
+
   function render() {
     grid.innerHTML = "";
     let anyVisible = false;
+    let totalCount = 0;
 
     categoryOrder.forEach((cat) => {
-      const items = PRODUCTS.filter((p) => p.category === cat && matches(p));
+      const items = sortItems(PRODUCTS.filter((p) => p.category === cat && matches(p)));
       if (items.length === 0) return;
       anyVisible = true;
+      totalCount += items.length;
 
       const section = document.createElement("section");
       section.className = "category";
@@ -60,6 +74,9 @@
     });
 
     emptyState.style.display = anyVisible ? "none" : "block";
+    resultsCount.textContent = anyVisible
+      ? `${totalCount} produs${totalCount === 1 ? "" : "e"} găsit${totalCount === 1 ? "" : "e"}`
+      : "";
   }
 
   function buildFilters() {
@@ -86,6 +103,22 @@
 
   searchInput.addEventListener("input", (e) => {
     query = e.target.value.trim().toLowerCase();
+    render();
+  });
+
+  sortSelect.addEventListener("change", (e) => {
+    sortMode = e.target.value;
+    render();
+  });
+
+  resetBtn.addEventListener("click", () => {
+    query = "";
+    sortMode = "default";
+    searchInput.value = "";
+    sortSelect.value = "default";
+    filterBar.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+    filterBar.firstElementChild.classList.add("active");
+    activeCategory = "all";
     render();
   });
 

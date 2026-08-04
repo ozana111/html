@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hidromarket 25 — Catalog piese hidraulice</title>
+<meta name="description" content="Catalog online Hidromarket 25: robinete hidraulice, mufe de cuplare, PTO, pompe hidraulice, joystick-uri și repartizoare. Prețuri actualizate din magazin.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231d4ed8'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial, sans-serif' font-weight='700' fill='white' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,9 +33,24 @@
 </div>
 
 <main>
-  <div class="category-filters" id="category-filters"></div>
+  <div class="toolbar">
+    <div class="category-filters" id="category-filters"></div>
+    <div class="sort-box">
+      <label for="sort">Sortează:</label>
+      <select id="sort">
+        <option value="default">Implicit</option>
+        <option value="price-asc">Preț crescător</option>
+        <option value="price-desc">Preț descrescător</option>
+        <option value="name-asc">Nume A-Z</option>
+      </select>
+    </div>
+  </div>
+  <p class="results-count" id="results-count"></p>
   <div class="grid" id="catalog"></div>
-  <p class="empty-state" id="empty-state">Niciun produs găsit.</p>
+  <div class="empty-state" id="empty-state">
+    <p>Niciun produs găsit.</p>
+    <button type="button" id="reset-filters">Resetează filtrele</button>
+  </div>
 </main>
 
 <footer>

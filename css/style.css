@@ -141,11 +141,42 @@ main {
   padding: 20px;
 }
 
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 4px 0 4px;
+}
+
 .category-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 4px 0 24px;
+}
+
+.sort-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.sort-box select {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.results-count {
+  margin: 0 0 16px;
+  font-size: 0.82rem;
+  color: var(--muted);
 }
 
 .category-filters button {
@@ -271,6 +302,22 @@ section.category .category-note {
   color: var(--muted);
   padding: 60px 20px;
   display: none;
+}
+
+.empty-state button {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.empty-state button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 footer {
