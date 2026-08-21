@@ -108,7 +108,7 @@ header.site-header {
 
 .search-box input {
   width: 100%;
-  padding: 10px 44px 10px 14px;
+  padding: 10px 94px 10px 14px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--bg);
@@ -119,6 +119,23 @@ header.site-header {
 .search-box input:focus {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
+}
+
+.mic-lang {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.72rem;
+  text-align: center;
+  text-align-last: center;
+  cursor: pointer;
 }
 
 .mic-btn {

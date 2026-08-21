@@ -1,13 +1,17 @@
 (function () {
   const micBtn = document.getElementById("mic-btn");
+  const langSelect = document.getElementById("mic-lang");
   const searchInput = document.getElementById("search");
   if (!micBtn || !searchInput) return;
 
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const LANG_STORAGE_KEY = "voiceSearchLang";
+  const DEFAULT_LANG = "ru-RU";
 
   if (!SpeechRecognition) {
     micBtn.disabled = true;
-    micBtn.title = "Căutarea vocală nu este acceptată de acest browser";
+    micBtn.title = "Căutarea vocală nu este acceptată de acest browser (folosiți Google Chrome)";
+    if (langSelect) langSelect.disabled = true;
     return;
   }
 
@@ -15,11 +19,23 @@
   if (!window.isSecureContext) {
     micBtn.disabled = true;
     micBtn.title = "Căutarea vocală necesită o conexiune HTTPS";
+    if (langSelect) langSelect.disabled = true;
     return;
   }
 
+  let savedLang = DEFAULT_LANG;
+  try {
+    savedLang = localStorage.getItem(LANG_STORAGE_KEY) || DEFAULT_LANG;
+  } catch (err) {
+    // localStorage unavailable (e.g. private mode); fall back to default.
+  }
+
+  if (langSelect) {
+    langSelect.value = savedLang;
+  }
+
   const recognition = new SpeechRecognition();
-  recognition.lang = document.documentElement.lang || navigator.language || "ro-RO";
+  recognition.lang = savedLang;
   recognition.continuous = false;
   recognition.interimResults = true;
   recognition.maxAlternatives = 1;
@@ -60,4 +76,18 @@
       // start() throws if already started; ignore.
     }
   });
+
+  if (langSelect) {
+    langSelect.addEventListener("change", () => {
+      recognition.lang = langSelect.value;
+      try {
+        localStorage.setItem(LANG_STORAGE_KEY, langSelect.value);
+      } catch (err) {
+        // ignore storage failures
+      }
+      if (listening) {
+        recognition.stop();
+      }
+    });
+  }
 })();
