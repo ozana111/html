@@ -119,6 +119,30 @@
   .extra-card h3{font-size:15px;font-weight:600;color:var(--navy);font-family:'Inter',sans-serif;margin-bottom:4px;}
   .extra-card p{font-size:13px;color:var(--navy-2);}
 
+  .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;}
+  .benefit-card{
+    position:relative;background:var(--white);border:1px solid rgba(13,59,79,0.08);
+    border-radius:14px;padding:26px;
+  }
+  .benefit-icon{
+    width:44px;height:44px;border-radius:50%;background:var(--sky-light);color:var(--red);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .benefit-icon svg{width:22px;height:22px;}
+  .benefit-num{
+    position:absolute;top:26px;right:24px;font-family:'Oswald',sans-serif;font-weight:700;
+    font-size:13px;color:rgba(13,59,79,0.22);letter-spacing:0.04em;
+  }
+  .benefit-card h3{
+    font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:17px;
+    color:var(--navy);margin-bottom:12px;letter-spacing:0.01em;line-height:1.2;
+  }
+  .benefit-card ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .benefit-card li{font-size:14px;color:var(--navy-2);padding-left:16px;position:relative;line-height:1.4;}
+  .benefit-card li::before{
+    content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--red);
+  }
+
   .contact-section{background:var(--navy);border-radius:24px;color:var(--white);}
   .contact-section .section-head .label{color:var(--cyan);}
   .contact-section h2{color:var(--white);}
@@ -211,16 +235,73 @@
         <p data-i18n="extra1_p">Identificare precisă a defecțiunii înainte de reparație.</p>
       </div>
       <div class="extra-card">
-        <h3 data-i18n="extra2_h">Curățare cu gheață uscată (Dry Ice)</h3>
-        <p data-i18n="extra2_p">Curățare tehnică fără substanțe chimice abrazive.</p>
-      </div>
-      <div class="extra-card">
         <h3 data-i18n="extra3_h">Piese de schimb originale</h3>
         <p data-i18n="extra3_p">Componente originale, nu echivalente second-hand.</p>
       </div>
       <div class="extra-card">
         <h3 data-i18n="extra4_h">Întreținere tehnică</h3>
         <p data-i18n="extra4_p">Mentenanță periodică pentru evitarea defecțiunilor majore.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section id="beneficii">
+    <div class="section-head">
+      <span class="label" data-i18n="benefits_label">Curățare profesională</span>
+      <h2 data-i18n="benefits_h2">5 beneficii ale curățării cu gheață uscată</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13c0-5 4-9 9-9h7v2c0 7-5 12-12 12H4z"/><path d="M11 13 20 4"/></svg></div>
+        <span class="benefit-num">01</span>
+        <h3 data-i18n="benefit1_h">Ecologic și sigur</h3>
+        <ul>
+          <li data-i18n="benefit1_li1">Fără apă și fără substanțe chimice.</li>
+          <li data-i18n="benefit1_li2">Nu produce deșeuri secundare.</li>
+          <li data-i18n="benefit1_li3">Sigur pentru componente și pentru operator.</li>
+        </ul>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+        <span class="benefit-num">02</span>
+        <h3 data-i18n="benefit2_h">Curățare rapidă și eficientă</h3>
+        <ul>
+          <li data-i18n="benefit2_li1">Îndepărtează uleiul, grăsimea și depunerile carbonizate.</li>
+          <li data-i18n="benefit2_li2">Reduce timpul de intervenție.</li>
+          <li data-i18n="benefit2_li3">În multe cazuri nu este necesară demontarea completă.</li>
+        </ul>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <span class="benefit-num">03</span>
+        <h3 data-i18n="benefit3_h">Protejează componentele</h3>
+        <ul>
+          <li data-i18n="benefit3_li1">Metodă neabrazivă.</li>
+          <li data-i18n="benefit3_li2">Nu zgârie și nu deteriorează suprafețele.</li>
+          <li data-i18n="benefit3_li3">Ideală pentru piese sensibile și instalații electrice.</li>
+        </ul>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 6h6v6"/></svg></div>
+        <span class="benefit-num">04</span>
+        <h3 data-i18n="benefit4_h">Performanță mai bună</h3>
+        <ul>
+          <li data-i18n="benefit4_li1">Motorul funcționează mai eficient.</li>
+          <li data-i18n="benefit4_li2">Reduce riscul supraîncălzirii.</li>
+          <li data-i18n="benefit4_li3">Ajută la prelungirea duratei de viață a componentelor.</li>
+        </ul>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></div>
+        <span class="benefit-num">05</span>
+        <h3 data-i18n="benefit5_h">Economisești timp și bani</h3>
+        <ul>
+          <li data-i18n="benefit5_li1">Mai puține ore de manoperă.</li>
+          <li data-i18n="benefit5_li2">Mai puține piese înlocuite inutil.</li>
+          <li data-i18n="benefit5_li3">Rezultate profesionale cu costuri reduse.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -271,7 +352,7 @@
 </div>
 
 <script>
-  const translations = {"nav_services": {"ro": "Servicii", "ru": "Услуги"}, "nav_contact": {"ro": "Contact", "ru": "Контакты"}, "hero_p": {"ro": "Reparații auto specializate — motor, injectoare, suspensie, turbosuflantă. Diagnosticare computerizată și piese de schimb originale.", "ru": "Специализированный ремонт авто — двигатель, форсунки, подвеска, турбина. Компьютерная диагностика и оригинальные запчасти."}, "btn_call": {"ro": "Sună acum · 078 205 435", "ru": "Позвонить · 078 205 435"}, "btn_video": {"ro": "Video pe TikTok", "ru": "Видео в TikTok"}, "btn_profile": {"ro": "Profil TikTok", "ru": "Профиль TikTok"}, "services_label": {"ro": "Ce facem", "ru": "Что мы делаем"}, "services_h2": {"ro": "Servicii", "ru": "Услуги"}, "cat_repair": {"ro": "Reparația", "ru": "Ремонт"}, "li_engine": {"ro": "Motorului", "ru": "Двигателя"}, "li_injectors": {"ro": "Injectoarelor", "ru": "Форсунок"}, "li_suspension": {"ro": "Suspensiei", "ru": "Подвески"}, "li_turbo": {"ro": "Turbosuflantei", "ru": "Турбины"}, "cat_change": {"ro": "Schimb", "ru": "Замена"}, "li_oil": {"ro": "Uleiuri", "ru": "Масла"}, "li_filters": {"ro": "Filtre", "ru": "Фильтры"}, "li_clutch": {"ro": "Ambreiaj", "ru": "Сцепление"}, "li_timing": {"ro": "Distribuție", "ru": "Ремень ГРМ"}, "extra1_h": {"ro": "Diagnosticare computerizată", "ru": "Компьютерная диагностика"}, "extra1_p": {"ro": "Identificare precisă a defecțiunii înainte de reparație.", "ru": "Точное определение неисправности перед ремонтом."}, "extra2_h": {"ro": "Curățare cu gheață uscată (Dry Ice)", "ru": "Чистка сухим льдом (Dry Ice)"}, "extra2_p": {"ro": "Curățare tehnică fără substanțe chimice abrazive.", "ru": "Техническая чистка без абразивной химии."}, "extra3_h": {"ro": "Piese de schimb originale", "ru": "Оригинальные запчасти"}, "extra3_p": {"ro": "Componente originale, nu echivalente second-hand.", "ru": "Оригинальные детали, не б/у аналоги."}, "extra4_h": {"ro": "Întreținere tehnică", "ru": "Техническое обслуживание"}, "extra4_p": {"ro": "Mentenanță periodică pentru evitarea defecțiunilor majore.", "ru": "Плановое обслуживание для предотвращения серьёзных поломок."}, "contact_label": {"ro": "Găsește-ne", "ru": "Как нас найти"}, "contact_h2": {"ro": "Contact", "ru": "Контакты"}, "tag_hours": {"ro": "Program", "ru": "Часы работы"}, "hours_days": {"ro": "Luni – Sâmbătă", "ru": "Пн – Сб"}, "hours_sub": {"ro": "Luni–Vineri 09:00–18:00 · Sâmbătă 09:00–15:00 · Duminică liber", "ru": "Пн–Пт 09:00–18:00 · Сб 09:00–15:00 · Вс выходной"}, "tag_address": {"ro": "Adresa", "ru": "Адрес"}, "address_sub": {"ro": "vis-a-vis de BMW Centru, Chișinău", "ru": "напротив BMW Centru, Кишинёв"}, "tag_tel": {"ro": "Tel", "ru": "Тел"}, "tag_email": {"ro": "Email", "ru": "Email"}, "footer_loc": {"ro": "Yalas Motors · Chișinău, Moldova", "ru": "Yalas Motors · Кишинёв, Молдова"}};
+  const translations = {"nav_services": {"ro": "Servicii", "ru": "Услуги"}, "nav_contact": {"ro": "Contact", "ru": "Контакты"}, "hero_p": {"ro": "Reparații auto specializate — motor, injectoare, suspensie, turbosuflantă. Diagnosticare computerizată și piese de schimb originale.", "ru": "Специализированный ремонт авто — двигатель, форсунки, подвеска, турбина. Компьютерная диагностика и оригинальные запчасти."}, "btn_call": {"ro": "Sună acum · 078 205 435", "ru": "Позвонить · 078 205 435"}, "btn_video": {"ro": "Video pe TikTok", "ru": "Видео в TikTok"}, "btn_profile": {"ro": "Profil TikTok", "ru": "Профиль TikTok"}, "services_label": {"ro": "Ce facem", "ru": "Что мы делаем"}, "services_h2": {"ro": "Servicii", "ru": "Услуги"}, "cat_repair": {"ro": "Reparația", "ru": "Ремонт"}, "li_engine": {"ro": "Motorului", "ru": "Двигателя"}, "li_injectors": {"ro": "Injectoarelor", "ru": "Форсунок"}, "li_suspension": {"ro": "Suspensiei", "ru": "Подвески"}, "li_turbo": {"ro": "Turbosuflantei", "ru": "Турбины"}, "cat_change": {"ro": "Schimb", "ru": "Замена"}, "li_oil": {"ro": "Uleiuri", "ru": "Масла"}, "li_filters": {"ro": "Filtre", "ru": "Фильтры"}, "li_clutch": {"ro": "Ambreiaj", "ru": "Сцепление"}, "li_timing": {"ro": "Distribuție", "ru": "Ремень ГРМ"}, "extra1_h": {"ro": "Diagnosticare computerizată", "ru": "Компьютерная диагностика"}, "extra1_p": {"ro": "Identificare precisă a defecțiunii înainte de reparație.", "ru": "Точное определение неисправности перед ремонтом."}, "extra3_h": {"ro": "Piese de schimb originale", "ru": "Оригинальные запчасти"}, "extra3_p": {"ro": "Componente originale, nu echivalente second-hand.", "ru": "Оригинальные детали, не б/у аналоги."}, "extra4_h": {"ro": "Întreținere tehnică", "ru": "Техническое обслуживание"}, "extra4_p": {"ro": "Mentenanță periodică pentru evitarea defecțiunilor majore.", "ru": "Плановое обслуживание для предотвращения серьёзных поломок."}, "contact_label": {"ro": "Găsește-ne", "ru": "Как нас найти"}, "contact_h2": {"ro": "Contact", "ru": "Контакты"}, "tag_hours": {"ro": "Program", "ru": "Часы работы"}, "hours_days": {"ro": "Luni – Sâmbătă", "ru": "Пн – Сб"}, "hours_sub": {"ro": "Luni–Vineri 09:00–18:00 · Sâmbătă 09:00–15:00 · Duminică liber", "ru": "Пн–Пт 09:00–18:00 · Сб 09:00–15:00 · Вс выходной"}, "tag_address": {"ro": "Adresa", "ru": "Адрес"}, "address_sub": {"ro": "vis-a-vis de BMW Centru, Chișinău", "ru": "напротив BMW Centru, Кишинёв"}, "tag_tel": {"ro": "Tel", "ru": "Тел"}, "tag_email": {"ro": "Email", "ru": "Email"}, "benefits_label": {"ro": "Curățare profesională", "ru": "Профессиональная чистка"}, "benefits_h2": {"ro": "5 beneficii ale curățării cu gheață uscată", "ru": "5 преимуществ чистки сухим льдом"}, "benefit1_h": {"ro": "Ecologic și sigur", "ru": "Экологично и безопасно"}, "benefit1_li1": {"ro": "Fără apă și fără substanțe chimice.", "ru": "Без воды и без химических веществ."}, "benefit1_li2": {"ro": "Nu produce deșeuri secundare.", "ru": "Не образует вторичных отходов."}, "benefit1_li3": {"ro": "Sigur pentru componente și pentru operator.", "ru": "Безопасно для деталей и оператора."}, "benefit2_h": {"ro": "Curățare rapidă și eficientă", "ru": "Быстрая и эффективная чистка"}, "benefit2_li1": {"ro": "Îndepărtează uleiul, grăsimea și depunerile carbonizate.", "ru": "Удаляет масло, жир и нагар."}, "benefit2_li2": {"ro": "Reduce timpul de intervenție.", "ru": "Сокращает время работы."}, "benefit2_li3": {"ro": "În multe cazuri nu este necesară demontarea completă.", "ru": "Часто не требует полной разборки."}, "benefit3_h": {"ro": "Protejează componentele", "ru": "Защищает детали"}, "benefit3_li1": {"ro": "Metodă neabrazivă.", "ru": "Неабразивный метод."}, "benefit3_li2": {"ro": "Nu zgârie și nu deteriorează suprafețele.", "ru": "Не царапает и не повреждает поверхности."}, "benefit3_li3": {"ro": "Ideală pentru piese sensibile și instalații electrice.", "ru": "Идеально для чувствительных деталей и проводки."}, "benefit4_h": {"ro": "Performanță mai bună", "ru": "Лучшая производительность"}, "benefit4_li1": {"ro": "Motorul funcționează mai eficient.", "ru": "Двигатель работает эффективнее."}, "benefit4_li2": {"ro": "Reduce riscul supraîncălzirii.", "ru": "Снижает риск перегрева."}, "benefit4_li3": {"ro": "Ajută la prelungirea duratei de viață a componentelor.", "ru": "Продлевает срок службы деталей."}, "benefit5_h": {"ro": "Economisești timp și bani", "ru": "Экономия времени и денег"}, "benefit5_li1": {"ro": "Mai puține ore de manoperă.", "ru": "Меньше часов работы мастера."}, "benefit5_li2": {"ro": "Mai puține piese înlocuite inutil.", "ru": "Меньше ненужно заменённых деталей."}, "benefit5_li3": {"ro": "Rezultate profesionale cu costuri reduse.", "ru": "Профессиональный результат при меньших затратах."}, "footer_loc": {"ro": "Yalas Motors · Chișinău, Moldova", "ru": "Yalas Motors · Кишинёв, Молдова"}};
   const buttons = document.querySelectorAll('.lang-toggle button');
   function setLang(lang){
     document.querySelectorAll('[data-i18n]').forEach(function(el){
