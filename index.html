@@ -86,6 +86,10 @@
   .btn:hover{transform:translateY(-1px);}
   .btn-primary{background:var(--red);color:#fff;box-shadow:0 6px 16px rgba(226,36,27,0.28);}
   .btn-ghost{background:var(--white);color:var(--navy);border:1px solid rgba(13,59,79,0.15);}
+  .btn-whatsapp{background:#25D366;color:#fff;box-shadow:0 6px 16px rgba(37,211,102,0.32);}
+  .btn-whatsapp svg{flex-shrink:0;}
+  .social-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .social-row a{display:inline-flex;align-items:center;gap:7px;}
 
   section{padding:56px 0;}
   .section-head{margin-bottom:30px;}
@@ -165,8 +169,10 @@
       <p data-i18n="hero_p">Reparații auto specializate — motor, injectoare, suspensie, turbosuflantă. Diagnosticare computerizată și piese de schimb originale.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="tel:+37378205435" data-i18n="btn_call">Sună acum · 078 205 435</a>
-        <a class="btn btn-ghost" href="https://www.tiktok.com/@yalasmotors/video/7668383239542705426" target="_blank" rel="noopener" data-i18n="btn_video">Video pe TikTok</a>
-        <a class="btn btn-ghost" href="https://www.tiktok.com/@yalasmotors" target="_blank" rel="noopener" data-i18n="btn_profile">Profil TikTok</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/37378205435" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.84 14.16c-.25.7-1.24 1.28-2.03 1.45-.54.11-1.24.2-3.62-.78-2.9-1.2-4.77-4.15-4.92-4.35-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.25-.27.55-.34.73-.34h.53c.17 0 .4-.02.61.47.25.6.85 2.07.92 2.22.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.22 1.36.28.14.44.12.6-.07.17-.2.71-.83.9-1.11.19-.28.37-.23.63-.14.25.09 1.62.77 1.9.91.28.14.46.21.53.32.07.12.07.68-.18 1.39z"/></svg>
+          WhatsApp
+        </a>
       </div>
       </div>
     </div>
@@ -239,6 +245,13 @@
         <div class="contact-item">
           <div class="tag"><div class="tag-label" data-i18n="tag_email">Email</div><div class="tag-value" style="font-size:13px;">yalasmotors@gmail.com</div></div>
           <a href="mailto:yalasmotors@gmail.com">yalasmotors@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="tag"><div class="tag-label" data-i18n="tag_social">Social</div><div class="tag-value" style="font-size:13px;">@yalasmotors</div></div>
+          <div class="social-row">
+            <a href="https://wa.me/37378205435" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://www.tiktok.com/@yalasmotors" target="_blank" rel="noopener">TikTok</a>
+          </div>
         </div>
       </div>
     </div>
