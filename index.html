@@ -167,18 +167,15 @@
   .contact-section{background:var(--navy);border-radius:24px;color:var(--white);}
   .contact-section .section-head .label{color:var(--cyan);}
   .contact-section h2{color:var(--white);}
-  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
   .map-embed{margin-top:24px;border-radius:16px;overflow:hidden;height:280px;}
   .map-embed iframe{width:100%;height:100%;border:0;display:block;}
-  .tag{
-    display:inline-flex;border-radius:999px;overflow:hidden;font-family:'Oswald',sans-serif;font-weight:600;
-    box-shadow:0 6px 18px rgba(0,0,0,0.25);
-  }
-  .tag-label{background:var(--red);color:#fff;font-size:12px;padding:10px 14px;display:flex;align-items:center;letter-spacing:0.05em;}
-  .tag-value{background:var(--white);color:var(--navy);padding:10px 16px;font-size:15px;letter-spacing:0.02em;}
-  .contact-item{display:flex;flex-direction:column;gap:8px;}
-  .contact-item a{color:var(--white);text-decoration:none;font-size:14px;opacity:0.85;}
-  .contact-item a:hover{opacity:1;text-decoration:underline;}
+  .contact-info{display:flex;flex-direction:column;gap:10px;}
+  .contact-info p{font-size:15px;}
+  .contact-info strong{color:var(--cyan);font-weight:600;margin-right:8px;}
+  .contact-info a{color:var(--white);text-decoration:none;}
+  .contact-info a:hover{text-decoration:underline;}
+  .contact-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+  .contact-buttons .btn-ghost{box-shadow:0 6px 16px rgba(0,0,0,0.2);}
 
   footer{padding:28px 0;color:var(--navy-2);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
   footer a{color:var(--navy-2);}
@@ -361,31 +358,28 @@
         <span class="label" data-i18n="contact_label">Găsește-ne</span>
         <h2 data-i18n="contact_h2">Contact</h2>
       </div>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <div class="tag"><div class="tag-label" data-i18n="tag_address">Adresa</div><div class="tag-value">str. Bucuriei, 1</div></div>
-          <a href="https://maps.google.com/?cid=6595103617811413767" target="_blank" rel="noopener" data-i18n="address_sub">vis-a-vis de BMW Centru, Chișinău</a>
-        </div>
-        <div class="contact-item">
-          <div class="tag"><div class="tag-label" data-i18n="tag_hours">Program</div><div class="tag-value" data-i18n="hours_days" style="font-size:13px;">Luni – Sâmbătă</div></div>
-          <span data-i18n="hours_sub" style="font-size:14px;opacity:0.85;">Luni–Vineri 09:00–18:00 · Sâmbătă 09:00–15:00 · Duminică liber</span>
-        </div>
-        <div class="contact-item">
-          <div class="tag"><div class="tag-label" data-i18n="tag_tel">Tel</div><div class="tag-value">078 205 435</div></div>
-          <a href="tel:+37378205435">+373 78 205 435</a>
-        </div>
-        <div class="contact-item">
-          <div class="tag"><div class="tag-label" data-i18n="tag_email">Email</div><div class="tag-value" style="font-size:13px;">yalasmotors@gmail.com</div></div>
-          <a href="mailto:yalasmotors@gmail.com">yalasmotors@gmail.com</a>
-        </div>
-        <div class="contact-item">
-          <div class="tag"><div class="tag-label" data-i18n="tag_social">Social</div><div class="tag-value" style="font-size:13px;">@yalasmotors</div></div>
-          <div class="social-row">
-            <a href="https://wa.me/37378205435" target="_blank" rel="noopener">WhatsApp</a>
-            <a href="https://www.tiktok.com/@yalasmotors" target="_blank" rel="noopener">TikTok</a>
-            <a href="https://www.instagram.com/yalasmotors/" target="_blank" rel="noopener">Instagram</a>
-          </div>
-        </div>
+      <div class="contact-info">
+        <p><strong data-i18n="tag_address">Adresa</strong> <a href="https://maps.google.com/?cid=6595103617811413767" target="_blank" rel="noopener">str. Bucuriei, 1 — <span data-i18n="address_sub">vis-a-vis de BMW Centru, Chișinău</span></a></p>
+        <p><strong data-i18n="tag_tel">Tel</strong> <a href="tel:+37378205435">+373 78 205 435</a></p>
+        <p><strong data-i18n="tag_hours">Program</strong> <span data-i18n="hours_sub">Luni–Vineri 09:00–17:00 · Sâmbătă 09:00–12:00 · Duminică liber</span></p>
+      </div>
+      <div class="contact-buttons">
+        <a class="btn btn-ghost" href="mailto:yalasmotors@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          Email
+        </a>
+        <a class="btn btn-whatsapp" href="https://wa.me/37378205435" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.84 14.16c-.25.7-1.24 1.28-2.03 1.45-.54.11-1.24.2-3.62-.78-2.9-1.2-4.77-4.15-4.92-4.35-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.25-.27.55-.34.73-.34h.53c.17 0 .4-.02.61.47.25.6.85 2.07.92 2.22.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.22 1.36.28.14.44.12.6-.07.17-.2.71-.83.9-1.11.19-.28.37-.23.63-.14.25.09 1.62.77 1.9.91.28.14.46.21.53.32.07.12.07.68-.18 1.39z"/></svg>
+          WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="https://www.tiktok.com/@yalasmotors" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 2c.3 2.3 1.8 3.9 4 4.2v3c-1.5 0-2.9-.5-4-1.3v6.4a5.9 5.9 0 1 1-5.1-5.8v3.1a2.9 2.9 0 1 0 2.1 2.8V2h3z"/></svg>
+          TikTok
+        </a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/yalasmotors/" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
       </div>
       <div class="map-embed">
         <iframe src="https://maps.google.com/maps?cid=6595103617811413767&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Yalas Motors pe hartă"></iframe>
@@ -402,7 +396,7 @@
 </div>
 
 <script>
-  const translations = {"nav_services": {"ro": "Servicii", "ru": "Услуги"}, "nav_contact": {"ro": "Contact", "ru": "Контакты"}, "hero_p": {"ro": "Reparații auto specializate — motor, injectoare, suspensie, turbosuflantă. Diagnosticare computerizată și piese de schimb originale.", "ru": "Специализированный ремонт авто — двигатель, форсунки, подвеска, турбина. Компьютерная диагностика и оригинальные запчасти."}, "btn_call": {"ro": "Sună acum · 078 205 435", "ru": "Позвонить · 078 205 435"}, "btn_video": {"ro": "Video pe TikTok", "ru": "Видео в TikTok"}, "btn_profile": {"ro": "Profil TikTok", "ru": "Профиль TikTok"}, "services_label": {"ro": "Ce facem", "ru": "Что мы делаем"}, "services_h2": {"ro": "Servicii", "ru": "Услуги"}, "cat_repair": {"ro": "Reparația", "ru": "Ремонт"}, "li_engine": {"ro": "Motorului", "ru": "Двигателя"}, "li_injectors": {"ro": "Injectoarelor", "ru": "Форсунок"}, "li_suspension": {"ro": "Suspensiei", "ru": "Подвески"}, "li_turbo": {"ro": "Turbosuflantei", "ru": "Турбины"}, "cat_change": {"ro": "Schimb", "ru": "Замена"}, "li_oil": {"ro": "Uleiuri", "ru": "Масла"}, "li_filters": {"ro": "Filtre", "ru": "Фильтры"}, "li_clutch": {"ro": "Ambreiaj", "ru": "Сцепление"}, "li_timing": {"ro": "Distribuție", "ru": "Ремень ГРМ"}, "extra1_h": {"ro": "Diagnosticare computerizată", "ru": "Компьютерная диагностика"}, "extra1_p": {"ro": "Identificare precisă a defecțiunii înainte de reparație.", "ru": "Точное определение неисправности перед ремонтом."}, "extra3_h": {"ro": "Piese de schimb originale", "ru": "Оригинальные запчасти"}, "extra3_p": {"ro": "Componente originale, nu echivalente second-hand.", "ru": "Оригинальные детали, не б/у аналоги."}, "extra4_h": {"ro": "Întreținere tehnică", "ru": "Техническое обслуживание"}, "extra4_p": {"ro": "Mentenanță periodică pentru evitarea defecțiunilor majore.", "ru": "Плановое обслуживание для предотвращения серьёзных поломок."}, "contact_label": {"ro": "Găsește-ne", "ru": "Как нас найти"}, "contact_h2": {"ro": "Contact", "ru": "Контакты"}, "tag_hours": {"ro": "Program", "ru": "Часы работы"}, "hours_days": {"ro": "Luni – Sâmbătă", "ru": "Пн – Сб"}, "hours_sub": {"ro": "Luni–Vineri 09:00–18:00 · Sâmbătă 09:00–15:00 · Duminică liber", "ru": "Пн–Пт 09:00–18:00 · Сб 09:00–15:00 · Вс выходной"}, "tag_address": {"ro": "Adresa", "ru": "Адрес"}, "address_sub": {"ro": "vis-a-vis de BMW Centru, Chișinău", "ru": "напротив BMW Centru, Кишинёв"}, "tag_tel": {"ro": "Tel", "ru": "Тел"}, "tag_email": {"ro": "Email", "ru": "Email"}, "benefits_label": {"ro": "Curățare profesională", "ru": "Профессиональная чистка"}, "benefits_h2": {"ro": "5 beneficii ale curățării cu gheață uscată", "ru": "5 преимуществ чистки сухим льдом"}, "benefit1_h": {"ro": "Ecologic și sigur", "ru": "Экологично и безопасно"}, "benefit1_li1": {"ro": "Fără apă și fără substanțe chimice.", "ru": "Без воды и без химических веществ."}, "benefit1_li2": {"ro": "Nu produce deșeuri secundare.", "ru": "Не образует вторичных отходов."}, "benefit1_li3": {"ro": "Sigur pentru componente și pentru operator.", "ru": "Безопасно для деталей и оператора."}, "benefit2_h": {"ro": "Curățare rapidă și eficientă", "ru": "Быстрая и эффективная чистка"}, "benefit2_li1": {"ro": "Îndepărtează uleiul, grăsimea și depunerile carbonizate.", "ru": "Удаляет масло, жир и нагар."}, "benefit2_li2": {"ro": "Reduce timpul de intervenție.", "ru": "Сокращает время работы."}, "benefit2_li3": {"ro": "În multe cazuri nu este necesară demontarea completă.", "ru": "Часто не требует полной разборки."}, "benefit3_h": {"ro": "Protejează componentele", "ru": "Защищает детали"}, "benefit3_li1": {"ro": "Metodă neabrazivă.", "ru": "Неабразивный метод."}, "benefit3_li2": {"ro": "Nu zgârie și nu deteriorează suprafețele.", "ru": "Не царапает и не повреждает поверхности."}, "benefit3_li3": {"ro": "Ideală pentru piese sensibile și instalații electrice.", "ru": "Идеально для чувствительных деталей и проводки."}, "benefit4_h": {"ro": "Performanță mai bună", "ru": "Лучшая производительность"}, "benefit4_li1": {"ro": "Motorul funcționează mai eficient.", "ru": "Двигатель работает эффективнее."}, "benefit4_li2": {"ro": "Reduce riscul supraîncălzirii.", "ru": "Снижает риск перегрева."}, "benefit4_li3": {"ro": "Ajută la prelungirea duratei de viață a componentelor.", "ru": "Продлевает срок службы деталей."}, "benefit5_h": {"ro": "Economisești timp și bani", "ru": "Экономия времени и денег"}, "benefit5_li1": {"ro": "Mai puține ore de manoperă.", "ru": "Меньше часов работы мастера."}, "benefit5_li2": {"ro": "Mai puține piese înlocuite inutil.", "ru": "Меньше ненужно заменённых деталей."}, "benefit5_li3": {"ro": "Rezultate profesionale cu costuri reduse.", "ru": "Профессиональный результат при меньших затратах."}, "gallery_label": {"ro": "Din activitatea noastră", "ru": "Из нашей работы"}, "gallery_h2": {"ro": "Galerie", "ru": "Галерея"}, "trust_reviews": {"ro": "· 24 recenzii Google", "ru": "· 24 отзыва в Google"}, "footer_loc": {"ro": "Yalas Motors SRL · Chișinău, Moldova", "ru": "Yalas Motors SRL · Кишинёв, Молдова"}};
+  const translations = {"nav_services": {"ro": "Servicii", "ru": "Услуги"}, "nav_contact": {"ro": "Contact", "ru": "Контакты"}, "hero_p": {"ro": "Reparații auto specializate — motor, injectoare, suspensie, turbosuflantă. Diagnosticare computerizată și piese de schimb originale.", "ru": "Специализированный ремонт авто — двигатель, форсунки, подвеска, турбина. Компьютерная диагностика и оригинальные запчасти."}, "btn_call": {"ro": "Sună acum · 078 205 435", "ru": "Позвонить · 078 205 435"}, "btn_video": {"ro": "Video pe TikTok", "ru": "Видео в TikTok"}, "btn_profile": {"ro": "Profil TikTok", "ru": "Профиль TikTok"}, "services_label": {"ro": "Ce facem", "ru": "Что мы делаем"}, "services_h2": {"ro": "Servicii", "ru": "Услуги"}, "cat_repair": {"ro": "Reparația", "ru": "Ремонт"}, "li_engine": {"ro": "Motorului", "ru": "Двигателя"}, "li_injectors": {"ro": "Injectoarelor", "ru": "Форсунок"}, "li_suspension": {"ro": "Suspensiei", "ru": "Подвески"}, "li_turbo": {"ro": "Turbosuflantei", "ru": "Турбины"}, "cat_change": {"ro": "Schimb", "ru": "Замена"}, "li_oil": {"ro": "Uleiuri", "ru": "Масла"}, "li_filters": {"ro": "Filtre", "ru": "Фильтры"}, "li_clutch": {"ro": "Ambreiaj", "ru": "Сцепление"}, "li_timing": {"ro": "Distribuție", "ru": "Ремень ГРМ"}, "extra1_h": {"ro": "Diagnosticare computerizată", "ru": "Компьютерная диагностика"}, "extra1_p": {"ro": "Identificare precisă a defecțiunii înainte de reparație.", "ru": "Точное определение неисправности перед ремонтом."}, "extra3_h": {"ro": "Piese de schimb originale", "ru": "Оригинальные запчасти"}, "extra3_p": {"ro": "Componente originale, nu echivalente second-hand.", "ru": "Оригинальные детали, не б/у аналоги."}, "extra4_h": {"ro": "Întreținere tehnică", "ru": "Техническое обслуживание"}, "extra4_p": {"ro": "Mentenanță periodică pentru evitarea defecțiunilor majore.", "ru": "Плановое обслуживание для предотвращения серьёзных поломок."}, "contact_label": {"ro": "Găsește-ne", "ru": "Как нас найти"}, "contact_h2": {"ro": "Contact", "ru": "Контакты"}, "tag_hours": {"ro": "Program", "ru": "Часы работы"}, "hours_days": {"ro": "Luni – Sâmbătă", "ru": "Пн – Сб"}, "hours_sub": {"ro": "Luni–Vineri 09:00–17:00 · Sâmbătă 09:00–12:00 · Duminică liber", "ru": "Пн–Пт 09:00–17:00 · Сб 09:00–12:00 · Вс выходной"}, "tag_address": {"ro": "Adresa", "ru": "Адрес"}, "address_sub": {"ro": "vis-a-vis de BMW Centru, Chișinău", "ru": "напротив BMW Centru, Кишинёв"}, "tag_tel": {"ro": "Tel", "ru": "Тел"}, "tag_email": {"ro": "Email", "ru": "Email"}, "benefits_label": {"ro": "Curățare profesională", "ru": "Профессиональная чистка"}, "benefits_h2": {"ro": "5 beneficii ale curățării cu gheață uscată", "ru": "5 преимуществ чистки сухим льдом"}, "benefit1_h": {"ro": "Ecologic și sigur", "ru": "Экологично и безопасно"}, "benefit1_li1": {"ro": "Fără apă și fără substanțe chimice.", "ru": "Без воды и без химических веществ."}, "benefit1_li2": {"ro": "Nu produce deșeuri secundare.", "ru": "Не образует вторичных отходов."}, "benefit1_li3": {"ro": "Sigur pentru componente și pentru operator.", "ru": "Безопасно для деталей и оператора."}, "benefit2_h": {"ro": "Curățare rapidă și eficientă", "ru": "Быстрая и эффективная чистка"}, "benefit2_li1": {"ro": "Îndepărtează uleiul, grăsimea și depunerile carbonizate.", "ru": "Удаляет масло, жир и нагар."}, "benefit2_li2": {"ro": "Reduce timpul de intervenție.", "ru": "Сокращает время работы."}, "benefit2_li3": {"ro": "În multe cazuri nu este necesară demontarea completă.", "ru": "Часто не требует полной разборки."}, "benefit3_h": {"ro": "Protejează componentele", "ru": "Защищает детали"}, "benefit3_li1": {"ro": "Metodă neabrazivă.", "ru": "Неабразивный метод."}, "benefit3_li2": {"ro": "Nu zgârie și nu deteriorează suprafețele.", "ru": "Не царапает и не повреждает поверхности."}, "benefit3_li3": {"ro": "Ideală pentru piese sensibile și instalații electrice.", "ru": "Идеально для чувствительных деталей и проводки."}, "benefit4_h": {"ro": "Performanță mai bună", "ru": "Лучшая производительность"}, "benefit4_li1": {"ro": "Motorul funcționează mai eficient.", "ru": "Двигатель работает эффективнее."}, "benefit4_li2": {"ro": "Reduce riscul supraîncălzirii.", "ru": "Снижает риск перегрева."}, "benefit4_li3": {"ro": "Ajută la prelungirea duratei de viață a componentelor.", "ru": "Продлевает срок службы деталей."}, "benefit5_h": {"ro": "Economisești timp și bani", "ru": "Экономия времени и денег"}, "benefit5_li1": {"ro": "Mai puține ore de manoperă.", "ru": "Меньше часов работы мастера."}, "benefit5_li2": {"ro": "Mai puține piese înlocuite inutil.", "ru": "Меньше ненужно заменённых деталей."}, "benefit5_li3": {"ro": "Rezultate profesionale cu costuri reduse.", "ru": "Профессиональный результат при меньших затратах."}, "gallery_label": {"ro": "Din activitatea noastră", "ru": "Из нашей работы"}, "gallery_h2": {"ro": "Galerie", "ru": "Галерея"}, "trust_reviews": {"ro": "· 24 recenzii Google", "ru": "· 24 отзыва в Google"}, "footer_loc": {"ro": "Yalas Motors SRL · Chișinău, Moldova", "ru": "Yalas Motors SRL · Кишинёв, Молдова"}};
   const buttons = document.querySelectorAll('.lang-toggle button');
   function setLang(lang){
     document.querySelectorAll('[data-i18n]').forEach(function(el){
